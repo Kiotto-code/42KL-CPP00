@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 00:18:02 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/17 02:01:23 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/19 02:27:26 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	Phonebook	phonebook;
-	phoneBook.Open()
+	PhoneBook	phoneBook;
+	phoneBook.Command();
 	return 0;
 }

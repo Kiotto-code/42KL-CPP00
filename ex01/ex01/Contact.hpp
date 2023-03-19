@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:46:51 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/17 03:07:13 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/20 00:24:19 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,18 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		std::string getFname();
-		std::string getLname();
-		std::string getNickname();
-		std::string getPhnum();
-		std::string getDarkSecret();
-		void	setFname();
-		void	setLname();
-		void	seNickname();
-		void	setPhnum();
-		void	setDarkSecret();
+		std::string Contact::inputData(const char *prompt);
+		std::string	showData();
+		std::string getFname() const;
+		std::string getLname() const;
+		std::string getNickname() const;
+		std::string getPhnum() const;
+		std::string getDarkSecret() const;
+		void	setFname(void);
+		void	setLname(void);
+		void	setNickname(void);
+		void	setPhnum(void);
+		void	setDarkSecret(void);
 		
 };
 

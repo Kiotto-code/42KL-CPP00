@@ -6,7 +6,7 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 18:29:34 by yichan            #+#    #+#              #
-#    Updated: 2023/03/16 23:43:46 by yichan           ###   ########.fr        #
+#    Updated: 2023/03/20 01:40:46 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC      =   c++
 RM      =   rm -rf
 CFLAGS  =   -Wall -Werror -Wextra -g -std=c++98
 CSAN  =  -fsanitize=address -g
-# INCLUDES    = ./includes
+INCLUDES    = ./includes
 SRC_PATH    = ./srcs
 OBJ_PATH    = ./obj
 LIBFT_PATH	= ./libft
@@ -41,7 +41,7 @@ $(NAME)			:	$(OBJS)
 
 
 $(OBJ_PATH)/%.o	:	$(SRC_PATH)/%.cpp* | $(OBJ_PATH) 
-					$(CC) $(CFLAGS) -c $< -o $@
+					$(CC) $(CFLAGS) -c -I$(INCLUDES) $< -o $@
 
 # $(OBJ_PATH)/%.o	:	$(SRC_PATH)/%.cpp* ./includes/*.h ./Makefile | $(OBJ_PATH) 
 # 					$(CC) $(CFLAGS) -c -I$(INCLUDES) $< -o $@

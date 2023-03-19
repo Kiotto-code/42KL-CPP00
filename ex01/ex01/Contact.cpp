@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 00:43:13 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/17 01:33:15 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/20 03:08:40 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {	
+}
+
+std::string Contact::inputData(const char *prompt)
+{
+	std::string value;
+
+	while(value.empty())
+	{
+		std::cout << prompt;
+		if (!std::getline(std::cin, value))
+			exit(EXIT_FAILURE);
+		// else if (!std::getline(std::cin, value))
+		else if (value.find_first_not_of(" \t\v\r\n") == value.npos)
+			value.clear()
+	}
+	return value;
 }
 
 std::string	Contact::getFname(void) const
@@ -45,27 +61,27 @@ std::string	Contact::getDarkSecret(void) const
 	return (this->darkest_seret);
 }
 
-void	Contact::setFname(std::string str)
+void	Contact::setFname(void)
 {
-	this->first_name = str;
+	this->first_name = inputData("Enter a First Name: ");
 }
 
-void	Contact::setLname(std::string str)
+void	Contact::setLname(void)
 {
-	this->last_name = str;
+	this->last_name = inputData("Enter a Last Name: ");
 }
 
-void	Contact::seNickname(std::string str)
+void	Contact::setNickname(void)
 {
-	this->nickname = str;
+	this->nickname = inputData("Enter a Nickname: ");
 }
 
-void	Contact::setPhnum(std::string str)
+void	Contact::setPhnum(void)
 {
-	this->phone_number = str;
+	this->phone_number = inputData("Enter a Phone Number: ");
 }
 
-void	Contact::setDarkSecret(std::string str)
+void	Contact::setDarkSecret(void)
 {
-	this->darkest_seret = str;
+	this->darkest_seret = inputData("Enter a darkest secret: ");
 }
