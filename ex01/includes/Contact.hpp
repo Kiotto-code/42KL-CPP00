@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:46:51 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/20 00:24:19 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/21 00:24:39 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		std::string Contact::inputData(const char *prompt);
+		std::string inputData(const char *prompt);
 		std::string	showData();
 		std::string getFname() const;
 		std::string getLname() const;

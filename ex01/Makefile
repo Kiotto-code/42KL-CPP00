@@ -6,11 +6,11 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 18:29:34 by yichan            #+#    #+#              #
-#    Updated: 2023/03/20 01:40:46 by yichan           ###   ########.fr        #
+#    Updated: 2023/03/21 00:21:05 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	phonebook
 CC      =   c++
 RM      =   rm -rf
 CFLAGS  =   -Wall -Werror -Wextra -g -std=c++98

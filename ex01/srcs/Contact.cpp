@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 00:43:13 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/20 03:08:40 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/21 00:25:08 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string Contact::inputData(const char *prompt)
 			exit(EXIT_FAILURE);
 		// else if (!std::getline(std::cin, value))
 		else if (value.find_first_not_of(" \t\v\r\n") == value.npos)
-			value.clear()
+			value.clear();
 	}
 	return value;
 }

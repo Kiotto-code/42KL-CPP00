@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 01:21:39 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/20 01:05:12 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/21 00:28:36 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 class PhoneBook
 {
 	private:
-		int		m_record_num;
 		int		m_index;
+		int		m_record_num;
 		Contact m_Contact[8];
 	public:
 		PhoneBook();
