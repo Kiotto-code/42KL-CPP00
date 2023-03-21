@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:25:18 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/21 01:17:17 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/21 19:50:03 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ void	PhoneBook::Add()
 		m_record_num += 1;
 }
 
+static void	truncate(std::string str)
+{
+	if (str.length() > 10)
+		std::cout << std::setw(9) << str.substr(0,9) << ".";
+	else
+		std::cout << std::setw(10) << str.substr(0,10);
+	std::cout << "|";
+}
+
 void	PhoneBook::Search()
 {
 	int it;
@@ -41,26 +50,29 @@ void	PhoneBook::Search()
 	}
 	else
 	{
-		std::cout << "|  index   " << "|first name" << "|last name " << "| nickname \n";
-		std::cout << "|----------" << "|----------" << "|----------" << "|----------\n";
+		std::cout << "|  index    " << "|first name" << "|last name " << "| nickname |\n";
+		std::cout << "|-----------" << "|----------" << "|----------" << "|----------|\n";
 		for (it = 0; it < m_record_num ; it ++)
 		{
-			std::cout << "|" << std::setw(10) << it << it+1 << "|";
-			if (m_Contact[it].getFname().length() > 10)
-				std::cout << m_Contact[it].getFname().substr(0,8) << ".";
-			else
-				std::cout << std::setw(10) << m_Contact[it].getFname();
-			std::cout << "|";
-			if (m_Contact[it].getLname().length() > 10)
-				std::cout << m_Contact[it].getLname().substr(0,8) << ".";
-			else
-				std::cout << std::setw(10) << m_Contact[it].getLname();
-			std::cout << "|";
-			if (m_Contact[it].getNickname().length() > 10)
-				std::cout << m_Contact[it].getNickname().substr(0,8) << ".";
-			else
-				std::cout << std::setw(10) << m_Contact[it].getNickname();
-			std::cout << "|\n";
+			std::cout << "| " << std::setw(10) << it+1 << "|";
+			truncate( m_Contact[it].getFname());
+			truncate( m_Contact[it].getLname());
+			truncate( m_Contact[it].getNickname());
+			// if (m_Contact[it].getFname().length() > 10)
+			// 	std::cout << m_Contact[it].getFname().substr(0,9) << ".";
+			// else
+			// 	std::cout << std::setw(10) << m_Contact[it].getFname();
+			// std::cout << "|";
+			// if (m_Contact[it].getLname().length() > 10)
+			// 	std::cout << m_Contact[it].getLname().substr(0,9) << ".";
+			// else
+			// 	std::cout << std::setw(10) << m_Contact[it].getLname();
+			// std::cout << "|";
+			// if (m_Contact[it].getNickname().length() > 10)
+			// 	std::cout << m_Contact[it].getNickname().substr(0,9) << ".";
+			// else
+			// 	std::cout << std::setw(10) << m_Contact[it].getNickname();
+			std::cout << "\n";
 		}
 		std::cout << "---------------------------END----------------------------" << std::endl;
 		while (1)
@@ -70,13 +82,13 @@ void	PhoneBook::Search()
 			// std::string::size_type non_num;
 			if (!std::getline(std::cin, num))
 				exit(EXIT_FAILURE);
-			if (isdigit(num[0]))
+			if (!isdigit(num[0]))
 			{
 				std::cout << "Something Wrong With you\n";
 				continue;
 			}
 			it = std::stoi(num) -1;
-			if (it < 0 || it > 7)
+			if (it < 0 || it > (m_record_num-1))
 				std::cout << "ERROR: Number wot within index range recorded\n" << "Enter index from 1 - " << m_record_num << std::endl;
 			else
 				break;

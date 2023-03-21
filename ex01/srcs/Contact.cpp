@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 00:43:13 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/21 00:25:08 by yichan           ###   ########.fr       */
+/*   Updated: 2023/03/21 20:08:44 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ std::string	Contact::getDarkSecret(void) const
 
 void	Contact::setFname(void)
 {
-	this->first_name = inputData("Enter a First Name: ");
+	std::string	str = inputData("Enter a First Name: ");
+	while (str.find("\t") != std::string::npos)
+		str = str.replace(str.find("\t"), std::strlen("\t"), "    ");
+	this->first_name = str;
 }
 
 void	Contact::setLname(void)
