@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:25:18 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/21 19:50:03 by yichan           ###   ########.fr       */
+/*   Updated: 2023/04/07 23:06:19 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,11 @@ void	PhoneBook::Search()
 			else
 				break;
 		}
-		std::cout	<< "The first name"		<< m_Contact[it].getFname() << "\n"
-					<< "The last name"		<< m_Contact[it].getLname() << "\n"
-					<< "The nick name"		<< m_Contact[it].getNickname() << "\n"
-					<< "The phone num"		<< m_Contact[it].getPhnum() << "\n"
-					<< "The darkest secret"	<< m_Contact[it].getDarkSecret()
+		std::cout	<< "The first name: "		<< m_Contact[it].getFname() << "\n"
+					<< "The last name: "		<< m_Contact[it].getLname() << "\n"
+					<< "The nick name: "		<< m_Contact[it].getNickname() << "\n"
+					<< "The phone num: "		<< m_Contact[it].getPhnum() << "\n"
+					<< "The darkest secret: "	<< m_Contact[it].getDarkSecret()
 					<< std::endl;
 	}
 }

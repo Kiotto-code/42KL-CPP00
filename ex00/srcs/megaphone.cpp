@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:50:49 by yichan            #+#    #+#             */
-/*   Updated: 2023/03/18 20:24:27 by yichan           ###   ########.fr       */
+/*   Updated: 2023/04/07 22:12:35 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int main(int ac, char **av)
 			(*av)[i] = std::toupper((*av)[i]);
 		std::cout << *av << " ";
     }
-    std::cout << std::endl ;
+    std::cout << std::endl;
     return(0);
 }
