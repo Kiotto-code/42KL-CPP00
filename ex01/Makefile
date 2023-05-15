@@ -6,7 +6,7 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 18:29:34 by yichan            #+#    #+#              #
-#    Updated: 2023/03/21 00:21:05 by yichan           ###   ########.fr        #
+#    Updated: 2023/05/15 23:01:17 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,15 @@ CSAN  =  -fsanitize=address -g
 INCLUDES    = ./includes
 SRC_PATH    = ./srcs
 OBJ_PATH    = ./obj
-LIBFT_PATH	= ./libft
+# LIBFT_PATH	= ./libft
 
 SRCS	= $(wildcard $(SRC_PATH)/*.cpp)
 # SRCS	= $(SRC_PATH)/megaphone.cpp
 # SRCS    = $(wildcard ./srcs/*/*.cpp)
 # OBJS    = ${SRCS:./srcs/%.cpp=${OBJ_PATH}/%.o}
 # SRCS	= ${shell find ./src/libft/ -name "*.cpp"}
-OBJS	= $(addprefix $(OBJ_PATH)/,$(patsubst %.cpp,%.o,$(notdir $(SRCS))))
+# OBJS	= $(addprefix $(OBJ_PATH)/,$(patsubst %.cpp,%.o,$(notdir $(SRCS))))
+OBJS	= $(patsubst $(SRC_PATH)/%.cpp, $(OBJ_PATH)/%.o, $(SRCS))
 # SRCS	= $(foreach x, $(SRC_PATH), $(wildcard $(addprefix $(x)/*/*,.cpp*)))
 # OBJS	= $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRCS)))))
 

@@ -6,14 +6,14 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 18:29:34 by yichan            #+#    #+#              #
-#    Updated: 2023/03/14 23:26:30 by yichan           ###   ########.fr        #
+#    Updated: 2023/05/15 14:59:00 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	megaphone
 CC      =   c++
 RM      =   rm -rf
-CFLAGS  =   -Wall -Werror -Wextra -g -std=c++98
+CFLAGS  =   -Wall -Werror -Wextra -g -std=c++98 
 CSAN  =  -fsanitize=address -g
 # INCLUDES    = ./includes
 SRC_PATH    = ./srcs

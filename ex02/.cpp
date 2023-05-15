@@ -8,22 +8,6 @@ int	Account::_totalAmount(0);
 int	Account::_totalNbDeposits(0);
 int	Account::_totalNbWithdrawals(0);
 
-void	Account::_displayTimestamp(void)
-{
-	std::time_t	t = std::time(NULL);
-	std::tm		tm = *std::localtime(&t);
-
-	std::cout << '['
-			  << std::setfill('0')
-			  << std::setw(4) << tm.tm_year + 1900
-			  << std::setw(2) << tm.tm_mon + 1
-			  << std::setw(2) << tm.tm_mday
-			  << '_'
-			  << std::setw(2) << tm.tm_hour
-			  << std::setw(2) << tm.tm_min
-			  << std::setw(2) << tm.tm_sec
-			  << "] ";
-}
 
 Account::Account(int initial_deposit) :	_accountIndex(_nbAccounts),
 										_amount(initial_deposit),
@@ -46,6 +30,22 @@ Account::~Account()
 				<< "closed" << std::endl;
 }
 
+void	Account::_displayTimestamp(void)
+{
+	std::time_t	t = std::time(NULL);
+	std::tm		tm = *std::localtime(&t);
+
+	std::cout << '['
+			  << std::setfill('0')
+			  << std::setw(4) << tm.tm_year + 1900
+			  << std::setw(2) << tm.tm_mon + 1
+			  << std::setw(2) << tm.tm_mday
+			  << '_'
+			  << std::setw(2) << tm.tm_hour
+			  << std::setw(2) << tm.tm_min
+			  << std::setw(2) << tm.tm_sec
+			  << "] ";
+}
 int	Account::getNbAccounts(void)
 {
 	return _nbAccounts;
