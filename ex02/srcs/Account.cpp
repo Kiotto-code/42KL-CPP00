@@ -12,11 +12,15 @@ void	Account::_displayTimestamp(void)
 {
 	std::time_t	t = std::time(NULL);
 	std::tm		tm = *std::localtime(&t);
+	// time_t		mk = std::mktime(&tm);
+
+	// std::cout << "The result value of mktime: " << mk << std::endl;
+	// std::cout << "The result value of mktime: " << tm << std::endl;
 
 	std::cout << '['
 			  << std::setfill('0')
-			  << std::setw(4) << tm.tm_year + 1900
-			  << std::setw(2) << tm.tm_mon + 1
+			  << std::setw(4) << tm.tm_year +1900 // years since 1900
+			  << std::setw(2) << tm.tm_mon + 1 // month since January [0-11]
 			  << std::setw(2) << tm.tm_mday
 			  << '_'
 			  << std::setw(2) << tm.tm_hour
