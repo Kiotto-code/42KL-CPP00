@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:25:18 by yichan            #+#    #+#             */
-/*   Updated: 2023/04/07 23:06:19 by yichan           ###   ########.fr       */
+/*   Updated: 2023/06/03 17:13:20 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	PhoneBook::Search()
 			std::cout << "Enter the index of the contact: ";
 			std::string num;
 			// std::string::size_type non_num;
-			if (!std::getline(std::cin, num))
+			if (!std::getline(std::cin, num)) // ctr+D
 				exit(EXIT_FAILURE);
 			if (!isdigit(num[0]))
 			{
