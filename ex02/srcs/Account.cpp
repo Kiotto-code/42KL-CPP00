@@ -10,8 +10,9 @@ int	Account::_totalNbWithdrawals(0);
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t	t = std::time(NULL);
-	std::tm		tm = *std::localtime(&t);
+	std::time_t	t = std::time(NULL); //Returns the current calendar time
+	std::tm		tm = *std::localtime(&t); //Converts given time since epoch as std::time_t value into calendar time, expressed in local time.
+
 	// time_t		mk = std::mktime(&tm);
 
 	// std::cout << "The result value of mktime: " << mk << std::endl;
@@ -130,7 +131,7 @@ void	Account::displayAccountsInfos( void )
 {
 	Account::_displayTimestamp();
 	std::cout	<< "accounts:" << getNbAccounts() << ";"
-				<< "total:" << Account::_totalAmount << ";"
+				<< "total:" << getTotalAmount() << ";"
 				<< "deposits:" << getNbDeposits() << ";"
-				<< "withdrawals:" << Account::getNbWithdrawals() << std::endl;
+				<< "withdrawals:" << getNbWithdrawals() << std::endl;
 }
