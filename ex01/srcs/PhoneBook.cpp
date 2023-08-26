@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:25:18 by yichan            #+#    #+#             */
-/*   Updated: 2023/06/03 17:13:20 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/26 22:54:53 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ PhoneBook::~PhoneBook() {}
 
 void	PhoneBook::Add()
 {
-	if (m_index > 7)
-		m_index = 0;
 	m_Contact[m_index].setFname();
 	m_Contact[m_index].setLname();
 	m_Contact[m_index].setNickname();
 	m_Contact[m_index].setPhnum();
 	m_Contact[m_index].setDarkSecret();
 	m_index += 1;
-	if (m_index < 8)
+	if (m_index > 7)
+		m_index = 0;
+	if (m_record_num < 8)
 		m_record_num += 1;
+	// 	m_record_num = 0;
 }
 
 static void	truncate(std::string str)
